@@ -36,17 +36,17 @@ public class User {
 	@Column(name = "password")
 	private String password;
 
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "user_id")
-	List<Blog> blogs;
-
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "user_id")
-	List<Authorities> authorities;
-
-	@ManyToMany
-	@JoinTable(name = "subscribers", joinColumns = @JoinColumn(name = "blogger_id"), inverseJoinColumns = @JoinColumn(name = "subcriber_id"))
-	private List<User> subscribers;
+//	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//	@JoinColumn(name = "user_id")
+//	List<Blog> blogs;
+//
+//	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//	@JoinColumn(name = "user_id")
+//	List<Authorities> authorities;
+//
+//	@ManyToMany
+//	@JoinTable(name = "subscribers", joinColumns = @JoinColumn(name = "blogger_id"), inverseJoinColumns = @JoinColumn(name = "subcriber_id"))
+//	private List<User> subscribers;
 
 	public User() {
 
@@ -59,29 +59,29 @@ public class User {
 		this.password = password;
 	}
 
-	public List<Blog> getBlogs() {
-		return blogs;
-	}
-
-	public void setBlogs(List<Blog> blogs) {
-		this.blogs = blogs;
-	}
-
-	public List<Authorities> getAuthorities() {
-		return authorities;
-	}
-
-	public void setAuthorities(List<Authorities> authorities) {
-		this.authorities = authorities;
-	}
-
-	public List<User> getSubscribers() {
-		return subscribers;
-	}
-
-	public void setSubscribers(List<User> subscribers) {
-		this.subscribers = subscribers;
-	}
+//	public List<Blog> getBlogs() {
+//		return blogs;
+//	}
+//
+//	public void setBlogs(List<Blog> blogs) {
+//		this.blogs = blogs;
+//	}
+//
+//	public List<Authorities> getAuthorities() {
+//		return authorities;
+//	}
+//
+//	public void setAuthorities(List<Authorities> authorities) {
+//		this.authorities = authorities;
+//	}
+//
+//	public List<User> getSubscribers() {
+//		return subscribers;
+//	}
+//
+//	public void setSubscribers(List<User> subscribers) {
+//		this.subscribers = subscribers;
+//	}
 
 	public int getId() {
 		return id;

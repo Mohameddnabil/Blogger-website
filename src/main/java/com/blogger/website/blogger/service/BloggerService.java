@@ -5,9 +5,9 @@ import java.util.List;
 import com.blogger.website.blogger.entity.User;
 
 public interface BloggerService {
-	public List<User> findAll();
+	public List<User> findAllBloggers();
 
-	public User findById(int id);
+	public User findBloggerById(int id);
 
 	public void addBlogger(User blogger);
 

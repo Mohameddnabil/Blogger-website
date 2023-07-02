@@ -3,6 +3,8 @@ package com.blogger.website.blogger.entity;
 import java.sql.Date;
 import java.sql.Timestamp;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,6 +31,7 @@ public class Blog {
 	private Date date;
 
 	@Column(name = "time_stamp")
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", timezone="Europe/Berlin")
 	private Timestamp timestamp;
 
 	@Column(name = "content")

@@ -16,9 +16,9 @@ import com.blogger.website.blogger.entity.User;
 import com.blogger.website.blogger.service.BloggerService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/bloggers")
 public class BloggerController {
-	private BloggerService bloggerService;
+	private final BloggerService bloggerService;
 
 	@Autowired
 	public BloggerController(BloggerService bloggerService) {
@@ -27,19 +27,18 @@ public class BloggerController {
 
 	}
 
-	@GetMapping("/bloggers")
+	@GetMapping("/")
 	public List<User> findAll() {
-		return bloggerService.findAll();
+		return bloggerService.findAllBloggers();
 	}
 
-	@GetMapping("/bloggers/{bloggerId}")
+	@GetMapping("/{bloggerId}")
 	public User getBlogger(@PathVariable("bloggerId") int theId) {
-		
-		return bloggerService.findById(theId);
+		return bloggerService.findBloggerById(theId);
 		
 	}
 
-	@PostMapping("/bloggers")
+	@PostMapping("/")
 	public void addBlogger(@RequestBody User blogger) {
 
 		blogger.setId(0);
@@ -47,14 +46,14 @@ public class BloggerController {
 
 	}
     
-	@DeleteMapping("/bloggers/{bloggerId}")
+	@DeleteMapping("/{bloggerId}")
 	public void deleteBlogger(@PathVariable("bloggerId") int theId) {
 		
 		bloggerService.delteBloggerById(theId);
 		
 	}
 	
-	@PutMapping("/bloggers")
+	@PutMapping("/")
 	public void updateBlogger(@RequestBody User blogger) {
 		
 		bloggerService.updateBlogger(blogger);

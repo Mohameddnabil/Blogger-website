@@ -23,15 +23,15 @@ public class BloggerServiceImp implements BloggerService{
 	}
     
 	@Override
-	public List<User> findAll() {
+	public List<User> findAllBloggers() {
 
 		return bloggerRepository.findAll();
 	}
     
 	@Override
-	public User findById(int id) {
+	public User findBloggerById(int id) {
 
-		return bloggerRepository.getById(id);
+		return bloggerRepository.findById(id).get();
 	}
 
 	@Override
